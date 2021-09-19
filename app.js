@@ -37,11 +37,25 @@ const promptUser = () => {
                     console.log('Please enter your github!');
                     return false;
                 }
+            },
+        },
+        {
+            type: 'confirm',
+            name: 'confirmAbout',
+            message: 'Would you like to enter some information about yourself in an "About" section?',
+            default: true
         },
         {
             type: 'input',
             name: 'about',
-            message: 'Provide some information about yourself:'
+            message: 'Provide some information about yourself:',
+            when: ({ confirmAbout }) => {
+                if (confirmAbout) {
+                    return true;
+                } else {
+                    false;
+                }
+            }
         }
     ]);
 };
@@ -102,6 +116,7 @@ if (!portfolioData.projects){
                     console.log('Please enter your github link!');
                     return false;
                 }
+            }
         },
         {
             type: 'confirm',
