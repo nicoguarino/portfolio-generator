@@ -100,7 +100,7 @@ if (!portfolioData.projects){
             }
         },
         {
-            type: 'input',
+            type: 'checkbox',
             name: 'languages',
             message: 'What did you build this project with? (Check all that apply)',
             choices: ['JavaScript', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
@@ -144,7 +144,7 @@ if (!portfolioData.projects){
 promptUser()
 .then(promptProject)
 .then(portfolioData => {
-
+    console.log(portfolioData);
     const pageHTML = generatePage(portfolioData);
 
     fs.writeFile('./index.html', pageHTML, err => {

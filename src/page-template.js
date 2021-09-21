@@ -6,6 +6,7 @@ const generateProjects = projectsArr => {
         ${projectsArr
           .filter(({ feature }) => feature)
           .map(({ name, description, languages, link }) => {
+              console.log(languages);
             return `
             <div class="col-12 mb-2 bg-dark text-light p-3">
               <h3 class="portfolio-item-title text-light">${name}</h3>
